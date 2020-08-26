@@ -15,9 +15,9 @@ namespace Tests
         {
             int distancePerHour = 45;
             double distance = 26.2;
-            Assert.AreEqual(35, Calculator.SovleForTime(distance, distancePerHour));
+            Assert.AreEqual(35, Calculator.SolveForTime(distance, distancePerHour));
             distance = -0.1;
-            Assert.AreEqual(0, Calculator.SovleForTime(distance, distancePerHour));
+            Assert.AreEqual(0, Calculator.SolveForTime(distance, distancePerHour));
         }
 
         [Test]
@@ -25,7 +25,7 @@ namespace Tests
         {
             int distancePerHour = 30;
             double distance = 56.7;
-            double travelTime = Calculator.SovleForTime(distance, distancePerHour);
+            double travelTime = Calculator.SolveForTime(distance, distancePerHour);
             Assert.AreEqual(113, travelTime);
             Assert.AreEqual("1 Hours, 53 Minutes", Calculator.TimeToString(travelTime));
         }
@@ -57,12 +57,12 @@ namespace Tests
         {
             double speed = 45;
             double minutes = 32;
-            Assert.AreEqual(24, Calculator.SolveForTime(speed, minutes));
+            Assert.AreEqual(24, Calculator.SolveForDistance(speed, minutes));
             speed = 66;
             minutes = 33;
-            Assert.AreEqual(36.3, Calculator.SolveForTime(speed, minutes));
+            Assert.AreEqual(36.3, Calculator.SolveForDistance(speed, minutes));
             minutes = -16.2;
-            Assert.AreEqual(0, Calculator.SolveForTime(speed, minutes));
+            Assert.AreEqual(0, Calculator.SolveForDistance(speed, minutes));
         }
 
         [Test]

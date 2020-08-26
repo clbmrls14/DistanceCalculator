@@ -4,7 +4,7 @@ namespace Calculations
 {
     public class Calculator
     {
-        public static int SovleForTime(double distance, int speed)
+        public static int SolveForTime(double distance, int speed)
         {
             if (distance < 0 | speed <= 0)
             {
@@ -14,7 +14,7 @@ namespace Calculations
             return (int) Math.Round((distance / speed) * 60); // Returns X minutes it will take to travel Y distance at Z speed
         }
 
-        public static double SolveForTime(double speed, double minutes)
+        public static double SolveForDistance(double speed, double minutes)
         {
             if (speed < 0 | minutes < 0)
             {
