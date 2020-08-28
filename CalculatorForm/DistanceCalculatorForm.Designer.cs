@@ -28,52 +28,124 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.tabDistanceCalculator = new System.Windows.Forms.TabControl();
+            this.tabCalculator = new System.Windows.Forms.TabPage();
+            this.txtTime = new System.Windows.Forms.NumericUpDown();
+            this.txtSpeed = new System.Windows.Forms.NumericUpDown();
+            this.txtDistance = new System.Windows.Forms.NumericUpDown();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.comboDistanceType = new System.Windows.Forms.ComboBox();
             this.comboSpeedType = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.btnTravelTime = new System.Windows.Forms.Button();
-            this.btnTravelRate = new System.Windows.Forms.Button();
-            this.btnTravelDistance = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnTime = new System.Windows.Forms.Button();
+            this.btnRate = new System.Windows.Forms.Button();
+            this.btnDistance = new System.Windows.Forms.Button();
             this.txtTravelTimeString = new System.Windows.Forms.TextBox();
             this.txtTravelTime = new System.Windows.Forms.TextBox();
             this.txtTravelRate = new System.Windows.Forms.TextBox();
-            this.txtDistance = new System.Windows.Forms.TextBox();
-            this.txtSpeed = new System.Windows.Forms.TextBox();
-            this.txtTime = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.labelMinutes = new System.Windows.Forms.Label();
             this.txtTravelDistance = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.txtConvertedDistance = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.btnConvert = new System.Windows.Forms.Button();
+            this.txtConversionResult = new System.Windows.Forms.TextBox();
+            this.tabHistory = new System.Windows.Forms.TabPage();
+            this.tabDistanceCalculator.SuspendLayout();
+            this.tabCalculator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTime)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSpeed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDistance)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // tabDistanceCalculator
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(117, 267);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Travel Time:";
+            this.tabDistanceCalculator.Controls.Add(this.tabCalculator);
+            this.tabDistanceCalculator.Controls.Add(this.tabHistory);
+            this.tabDistanceCalculator.Location = new System.Drawing.Point(12, 12);
+            this.tabDistanceCalculator.Name = "tabDistanceCalculator";
+            this.tabDistanceCalculator.SelectedIndex = 0;
+            this.tabDistanceCalculator.Size = new System.Drawing.Size(1005, 606);
+            this.tabDistanceCalculator.TabIndex = 0;
             // 
-            // label2
+            // tabCalculator
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(117, 302);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 21);
-            this.label2.TabIndex = 1;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.tabCalculator.BackColor = System.Drawing.Color.Gainsboro;
+            this.tabCalculator.Controls.Add(this.txtTime);
+            this.tabCalculator.Controls.Add(this.txtSpeed);
+            this.tabCalculator.Controls.Add(this.txtDistance);
+            this.tabCalculator.Controls.Add(this.label10);
+            this.tabCalculator.Controls.Add(this.label9);
+            this.tabCalculator.Controls.Add(this.comboDistanceType);
+            this.tabCalculator.Controls.Add(this.comboSpeedType);
+            this.tabCalculator.Controls.Add(this.label8);
+            this.tabCalculator.Controls.Add(this.label7);
+            this.tabCalculator.Controls.Add(this.label6);
+            this.tabCalculator.Controls.Add(this.label5);
+            this.tabCalculator.Controls.Add(this.label4);
+            this.tabCalculator.Controls.Add(this.label3);
+            this.tabCalculator.Controls.Add(this.btnTime);
+            this.tabCalculator.Controls.Add(this.btnRate);
+            this.tabCalculator.Controls.Add(this.btnDistance);
+            this.tabCalculator.Controls.Add(this.txtTravelTimeString);
+            this.tabCalculator.Controls.Add(this.txtTravelTime);
+            this.tabCalculator.Controls.Add(this.txtTravelRate);
+            this.tabCalculator.Controls.Add(this.labelMinutes);
+            this.tabCalculator.Controls.Add(this.txtTravelDistance);
+            this.tabCalculator.Controls.Add(this.btnConvert);
+            this.tabCalculator.Controls.Add(this.txtConversionResult);
+            this.tabCalculator.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.tabCalculator.Location = new System.Drawing.Point(4, 30);
+            this.tabCalculator.Name = "tabCalculator";
+            this.tabCalculator.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCalculator.Size = new System.Drawing.Size(997, 572);
+            this.tabCalculator.TabIndex = 0;
+            this.tabCalculator.Text = "Calculator";
+            // 
+            // txtTime
+            // 
+            this.txtTime.Location = new System.Drawing.Point(195, 212);
+            this.txtTime.Name = "txtTime";
+            this.txtTime.Size = new System.Drawing.Size(93, 29);
+            this.txtTime.TabIndex = 14;
+            // 
+            // txtSpeed
+            // 
+            this.txtSpeed.Location = new System.Drawing.Point(195, 162);
+            this.txtSpeed.Name = "txtSpeed";
+            this.txtSpeed.Size = new System.Drawing.Size(93, 29);
+            this.txtSpeed.TabIndex = 14;
+            // 
+            // txtDistance
+            // 
+            this.txtDistance.Location = new System.Drawing.Point(195, 111);
+            this.txtDistance.Name = "txtDistance";
+            this.txtDistance.Size = new System.Drawing.Size(93, 29);
+            this.txtDistance.TabIndex = 14;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(196, 306);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(102, 21);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Travel Time:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(196, 341);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(0, 21);
+            this.label9.TabIndex = 1;
+            this.label9.Click += new System.EventHandler(this.label2_Click);
             // 
             // comboDistanceType
             // 
@@ -82,12 +154,12 @@
             this.comboDistanceType.Items.AddRange(new object[] {
             "Miles",
             "Kilometers"});
-            this.comboDistanceType.Location = new System.Drawing.Point(217, 71);
+            this.comboDistanceType.Location = new System.Drawing.Point(296, 110);
             this.comboDistanceType.Margin = new System.Windows.Forms.Padding(4);
             this.comboDistanceType.Name = "comboDistanceType";
             this.comboDistanceType.Size = new System.Drawing.Size(108, 29);
             this.comboDistanceType.TabIndex = 4;
-            this.comboDistanceType.Text = "...";
+            this.comboDistanceType.Text = "Miles";
             // 
             // comboSpeedType
             // 
@@ -95,107 +167,107 @@
             this.comboSpeedType.Items.AddRange(new object[] {
             "MPH",
             "KPH"});
-            this.comboSpeedType.Location = new System.Drawing.Point(217, 122);
+            this.comboSpeedType.Location = new System.Drawing.Point(296, 161);
             this.comboSpeedType.Margin = new System.Windows.Forms.Padding(4);
             this.comboSpeedType.Name = "comboSpeedType";
             this.comboSpeedType.Size = new System.Drawing.Size(108, 29);
             this.comboSpeedType.TabIndex = 4;
-            this.comboSpeedType.Text = "...";
+            this.comboSpeedType.Text = "MPH";
             // 
-            // label5
+            // label8
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(38, 73);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 21);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Distance:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(54, 124);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 21);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Speed:";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(117, 112);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(72, 21);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Distance:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(54, 172);
+            this.label7.Location = new System.Drawing.Point(133, 163);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(47, 21);
+            this.label7.Size = new System.Drawing.Size(56, 21);
             this.label7.TabIndex = 7;
-            this.label7.Text = "Time:";
+            this.label7.Text = "Speed:";
             // 
-            // label9
+            // label6
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(355, 267);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(118, 21);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Rate of Travel:";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(133, 211);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(47, 21);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Time:";
             // 
-            // label11
+            // label5
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(594, 267);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(149, 21);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Distance Traveled:";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(434, 306);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(118, 21);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Rate of Travel:";
             // 
-            // label12
+            // label4
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(117, 344);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(0, 21);
-            this.label12.TabIndex = 0;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(673, 306);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(149, 21);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Distance Traveled:";
             // 
-            // btnTravelTime
+            // label3
             // 
-            this.btnTravelTime.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnTravelTime.Location = new System.Drawing.Point(117, 393);
-            this.btnTravelTime.Name = "btnTravelTime";
-            this.btnTravelTime.Size = new System.Drawing.Size(165, 35);
-            this.btnTravelTime.TabIndex = 8;
-            this.btnTravelTime.Text = "Calculate Travel Time";
-            this.btnTravelTime.UseVisualStyleBackColor = false;
-            this.btnTravelTime.Click += new System.EventHandler(this.btnTravelTime_Click);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(196, 383);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 21);
+            this.label3.TabIndex = 0;
             // 
-            // btnTravelRate
+            // btnTime
             // 
-            this.btnTravelRate.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnTravelRate.Location = new System.Drawing.Point(355, 393);
-            this.btnTravelRate.Name = "btnTravelRate";
-            this.btnTravelRate.Size = new System.Drawing.Size(180, 35);
-            this.btnTravelRate.TabIndex = 8;
-            this.btnTravelRate.Text = "Calculate Rate of Travel";
-            this.btnTravelRate.UseVisualStyleBackColor = false;
-            this.btnTravelRate.Click += new System.EventHandler(this.btnTravelRate_Click);
+            this.btnTime.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnTime.Location = new System.Drawing.Point(196, 432);
+            this.btnTime.Name = "btnTime";
+            this.btnTime.Size = new System.Drawing.Size(165, 35);
+            this.btnTime.TabIndex = 8;
+            this.btnTime.Text = "Calculate Travel Time";
+            this.btnTime.UseVisualStyleBackColor = false;
+            this.btnTime.Click += new System.EventHandler(this.btnTravelTime_Click);
             // 
-            // btnTravelDistance
+            // btnRate
             // 
-            this.btnTravelDistance.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnTravelDistance.Location = new System.Drawing.Point(594, 393);
-            this.btnTravelDistance.Name = "btnTravelDistance";
-            this.btnTravelDistance.Size = new System.Drawing.Size(207, 35);
-            this.btnTravelDistance.TabIndex = 8;
-            this.btnTravelDistance.Text = "Calculate Distance Traveled";
-            this.btnTravelDistance.UseVisualStyleBackColor = false;
-            this.btnTravelDistance.Click += new System.EventHandler(this.btnTravelDistance_Click);
+            this.btnRate.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnRate.Location = new System.Drawing.Point(434, 432);
+            this.btnRate.Name = "btnRate";
+            this.btnRate.Size = new System.Drawing.Size(180, 35);
+            this.btnRate.TabIndex = 8;
+            this.btnRate.Text = "Calculate Rate of Travel";
+            this.btnRate.UseVisualStyleBackColor = false;
+            this.btnRate.Click += new System.EventHandler(this.btnTravelRate_Click);
+            // 
+            // btnDistance
+            // 
+            this.btnDistance.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnDistance.Location = new System.Drawing.Point(673, 432);
+            this.btnDistance.Name = "btnDistance";
+            this.btnDistance.Size = new System.Drawing.Size(207, 35);
+            this.btnDistance.TabIndex = 8;
+            this.btnDistance.Text = "Calculate Distance Traveled";
+            this.btnDistance.UseVisualStyleBackColor = false;
+            this.btnDistance.Click += new System.EventHandler(this.btnTravelDistance_Click);
             // 
             // txtTravelTimeString
             // 
-            this.txtTravelTimeString.Location = new System.Drawing.Point(117, 344);
+            this.txtTravelTimeString.Location = new System.Drawing.Point(196, 383);
             this.txtTravelTimeString.Name = "txtTravelTimeString";
             this.txtTravelTimeString.ReadOnly = true;
             this.txtTravelTimeString.Size = new System.Drawing.Size(165, 29);
@@ -203,7 +275,7 @@
             // 
             // txtTravelTime
             // 
-            this.txtTravelTime.Location = new System.Drawing.Point(117, 299);
+            this.txtTravelTime.Location = new System.Drawing.Point(196, 338);
             this.txtTravelTime.Name = "txtTravelTime";
             this.txtTravelTime.ReadOnly = true;
             this.txtTravelTime.Size = new System.Drawing.Size(165, 29);
@@ -211,82 +283,58 @@
             // 
             // txtTravelRate
             // 
-            this.txtTravelRate.Location = new System.Drawing.Point(355, 299);
+            this.txtTravelRate.Location = new System.Drawing.Point(434, 338);
             this.txtTravelRate.Name = "txtTravelRate";
             this.txtTravelRate.ReadOnly = true;
             this.txtTravelRate.Size = new System.Drawing.Size(165, 29);
             this.txtTravelRate.TabIndex = 9;
             // 
-            // txtDistance
+            // labelMinutes
             // 
-            this.txtDistance.Location = new System.Drawing.Point(110, 71);
-            this.txtDistance.Name = "txtDistance";
-            this.txtDistance.Size = new System.Drawing.Size(100, 29);
-            this.txtDistance.TabIndex = 10;
-            this.txtDistance.Text = "0";
-            // 
-            // txtSpeed
-            // 
-            this.txtSpeed.Location = new System.Drawing.Point(110, 124);
-            this.txtSpeed.Name = "txtSpeed";
-            this.txtSpeed.Size = new System.Drawing.Size(100, 29);
-            this.txtSpeed.TabIndex = 10;
-            this.txtSpeed.Text = "0";
-            // 
-            // txtTime
-            // 
-            this.txtTime.Location = new System.Drawing.Point(110, 172);
-            this.txtTime.Name = "txtTime";
-            this.txtTime.Size = new System.Drawing.Size(100, 29);
-            this.txtTime.TabIndex = 10;
-            this.txtTime.Text = "0";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(217, 175);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(93, 21);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "(In Minutes)";
+            this.labelMinutes.AutoSize = true;
+            this.labelMinutes.Location = new System.Drawing.Point(296, 214);
+            this.labelMinutes.Name = "labelMinutes";
+            this.labelMinutes.Size = new System.Drawing.Size(93, 21);
+            this.labelMinutes.TabIndex = 11;
+            this.labelMinutes.Text = "(In Minutes)";
             // 
             // txtTravelDistance
             // 
-            this.txtTravelDistance.Location = new System.Drawing.Point(594, 299);
+            this.txtTravelDistance.Location = new System.Drawing.Point(673, 338);
             this.txtTravelDistance.Name = "txtTravelDistance";
             this.txtTravelDistance.ReadOnly = true;
             this.txtTravelDistance.Size = new System.Drawing.Size(165, 29);
             this.txtTravelDistance.TabIndex = 9;
             this.txtTravelDistance.Click += new System.EventHandler(this.btnTravelDistance_Click);
             // 
-            // button1
+            // btnConvert
             // 
-            this.button1.Location = new System.Drawing.Point(332, 66);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 36);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Convert";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btnConvertDistance_Click);
+            this.btnConvert.Location = new System.Drawing.Point(411, 105);
+            this.btnConvert.Name = "btnConvert";
+            this.btnConvert.Size = new System.Drawing.Size(75, 36);
+            this.btnConvert.TabIndex = 12;
+            this.btnConvert.Text = "Convert";
+            this.btnConvert.UseVisualStyleBackColor = true;
+            this.btnConvert.Click += new System.EventHandler(this.btnConvertDistance_Click);
             // 
-            // txtConvertedDistance
+            // txtConversionResult
             // 
-            this.txtConvertedDistance.Location = new System.Drawing.Point(413, 70);
-            this.txtConvertedDistance.Name = "txtConvertedDistance";
-            this.txtConvertedDistance.ReadOnly = true;
-            this.txtConvertedDistance.Size = new System.Drawing.Size(100, 29);
-            this.txtConvertedDistance.TabIndex = 10;
-            this.txtConvertedDistance.Text = "0";
+            this.txtConversionResult.Location = new System.Drawing.Point(492, 109);
+            this.txtConversionResult.Name = "txtConversionResult";
+            this.txtConversionResult.ReadOnly = true;
+            this.txtConversionResult.Size = new System.Drawing.Size(144, 29);
+            this.txtConversionResult.TabIndex = 10;
+            this.txtConversionResult.Text = "0";
             // 
-            // label3
+            // tabHistory
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(519, 74);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 21);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Result";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.tabHistory.BackColor = System.Drawing.Color.Gainsboro;
+            this.tabHistory.Location = new System.Drawing.Point(4, 30);
+            this.tabHistory.Name = "tabHistory";
+            this.tabHistory.Padding = new System.Windows.Forms.Padding(3);
+            this.tabHistory.Size = new System.Drawing.Size(997, 572);
+            this.tabHistory.TabIndex = 1;
+            this.tabHistory.Text = "History";
             // 
             // CalcForm
             // 
@@ -294,65 +342,49 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1029, 630);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtConvertedDistance);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.txtTravelDistance);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtTime);
-            this.Controls.Add(this.txtSpeed);
-            this.Controls.Add(this.txtDistance);
-            this.Controls.Add(this.txtTravelRate);
-            this.Controls.Add(this.txtTravelTime);
-            this.Controls.Add(this.txtTravelTimeString);
-            this.Controls.Add(this.btnTravelDistance);
-            this.Controls.Add(this.btnTravelRate);
-            this.Controls.Add(this.btnTravelTime);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.comboSpeedType);
-            this.Controls.Add(this.comboDistanceType);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.tabDistanceCalculator);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CalcForm";
             this.Text = "Distance Calculator";
+            this.tabDistanceCalculator.ResumeLayout(false);
+            this.tabCalculator.ResumeLayout(false);
+            this.tabCalculator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTime)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSpeed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDistance)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TabControl tabDistanceCalculator;
+        private System.Windows.Forms.TabPage tabCalculator;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox comboDistanceType;
         private System.Windows.Forms.ComboBox comboSpeedType;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button btnTravelTime;
-        private System.Windows.Forms.Button btnTravelRate;
-        private System.Windows.Forms.Button btnTravelDistance;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnTime;
+        private System.Windows.Forms.Button btnRate;
+        private System.Windows.Forms.Button btnDistance;
         private System.Windows.Forms.TextBox txtTravelTimeString;
         private System.Windows.Forms.TextBox txtTravelTime;
         private System.Windows.Forms.TextBox txtTravelRate;
-        private System.Windows.Forms.TextBox txtDistance;
-        private System.Windows.Forms.TextBox txtSpeed;
-        private System.Windows.Forms.TextBox txtTime;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label labelMinutes;
         private System.Windows.Forms.TextBox txtTravelDistance;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txtConvertedDistance;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnConvert;
+        private System.Windows.Forms.TextBox txtConversionResult;
+        private System.Windows.Forms.TabPage tabHistory;
+        private System.Windows.Forms.NumericUpDown txtTime;
+        private System.Windows.Forms.NumericUpDown txtSpeed;
+        private System.Windows.Forms.NumericUpDown txtDistance;
     }
 }
 

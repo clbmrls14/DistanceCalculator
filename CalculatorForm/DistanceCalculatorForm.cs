@@ -54,11 +54,11 @@ namespace CalculatorForm
         {
             if(comboDistanceType.Text == "Miles")
             {
-                txtConvertedDistance.Text = Calculations.Calculator.MilesToKilometers(double.Parse(txtDistance.Text)).ToString();
+                txtConversionResult.Text = Calculations.Calculator.MilesToKilometers(double.Parse(txtDistance.Text)).ToString() + " Kilometers";
             }
             else if (comboDistanceType.Text == "Kilometers")
             {
-                txtConvertedDistance.Text = Calculations.Calculator.KilometersToMiles(double.Parse(txtDistance.Text)).ToString();
+                txtConversionResult.Text = Calculations.Calculator.KilometersToMiles(double.Parse(txtDistance.Text)).ToString() + " Miles";
             }
         }
 
