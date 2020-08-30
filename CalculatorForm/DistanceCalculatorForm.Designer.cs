@@ -79,7 +79,7 @@
             this.tabDistanceCalculator.Name = "tabDistanceCalculator";
             this.tabDistanceCalculator.SelectedIndex = 0;
             this.tabDistanceCalculator.Size = new System.Drawing.Size(1005, 606);
-            this.tabDistanceCalculator.TabIndex = 0;
+            this.tabDistanceCalculator.TabIndex = 8;
             this.tabDistanceCalculator.SelectedIndexChanged += new System.EventHandler(this.tabDistanceCalculator_SelectedIndexChanged);
             // 
             // tabCalculator
@@ -121,7 +121,7 @@
             this.btnCalculateAll.Location = new System.Drawing.Point(117, 457);
             this.btnCalculateAll.Name = "btnCalculateAll";
             this.btnCalculateAll.Size = new System.Drawing.Size(228, 62);
-            this.btnCalculateAll.TabIndex = 8;
+            this.btnCalculateAll.TabIndex = 7;
             this.btnCalculateAll.Text = "Calculate All";
             this.btnCalculateAll.UseVisualStyleBackColor = false;
             this.btnCalculateAll.Click += new System.EventHandler(this.btnCalculateAll_Click);
@@ -136,7 +136,7 @@
             0});
             this.txtTime.Name = "txtTime";
             this.txtTime.Size = new System.Drawing.Size(93, 29);
-            this.txtTime.TabIndex = 14;
+            this.txtTime.TabIndex = 6;
             // 
             // txtSpeed
             // 
@@ -148,7 +148,7 @@
             0});
             this.txtSpeed.Name = "txtSpeed";
             this.txtSpeed.Size = new System.Drawing.Size(93, 29);
-            this.txtSpeed.TabIndex = 14;
+            this.txtSpeed.TabIndex = 4;
             // 
             // txtDistance
             // 
@@ -160,7 +160,7 @@
             0});
             this.txtDistance.Name = "txtDistance";
             this.txtDistance.Size = new System.Drawing.Size(93, 29);
-            this.txtDistance.TabIndex = 14;
+            this.txtDistance.TabIndex = 1;
             // 
             // label10
             // 
@@ -186,7 +186,7 @@
             // comboDistanceType
             // 
             this.comboDistanceType.AllowDrop = true;
-            this.comboDistanceType.FormattingEnabled = true;
+            this.comboDistanceType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboDistanceType.Items.AddRange(new object[] {
             "Miles",
             "Kilometers"});
@@ -194,11 +194,11 @@
             this.comboDistanceType.Margin = new System.Windows.Forms.Padding(4);
             this.comboDistanceType.Name = "comboDistanceType";
             this.comboDistanceType.Size = new System.Drawing.Size(108, 29);
-            this.comboDistanceType.TabIndex = 4;
-            this.comboDistanceType.Text = "Miles";
+            this.comboDistanceType.TabIndex = 2;
             // 
             // comboSpeedType
             // 
+            this.comboSpeedType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboSpeedType.FormattingEnabled = true;
             this.comboSpeedType.Items.AddRange(new object[] {
             "MPH",
@@ -207,8 +207,7 @@
             this.comboSpeedType.Margin = new System.Windows.Forms.Padding(4);
             this.comboSpeedType.Name = "comboSpeedType";
             this.comboSpeedType.Size = new System.Drawing.Size(108, 29);
-            this.comboSpeedType.TabIndex = 4;
-            this.comboSpeedType.Text = "MPH";
+            this.comboSpeedType.TabIndex = 5;
             // 
             // label8
             // 
@@ -275,6 +274,7 @@
             this.txtTravelTimeString.ReadOnly = true;
             this.txtTravelTimeString.Size = new System.Drawing.Size(165, 29);
             this.txtTravelTimeString.TabIndex = 9;
+            this.txtTravelTimeString.TabStop = false;
             // 
             // txtTravelTime
             // 
@@ -283,6 +283,7 @@
             this.txtTravelTime.ReadOnly = true;
             this.txtTravelTime.Size = new System.Drawing.Size(165, 29);
             this.txtTravelTime.TabIndex = 9;
+            this.txtTravelTime.TabStop = false;
             // 
             // txtTravelRate
             // 
@@ -291,6 +292,7 @@
             this.txtTravelRate.ReadOnly = true;
             this.txtTravelRate.Size = new System.Drawing.Size(181, 29);
             this.txtTravelRate.TabIndex = 9;
+            this.txtTravelRate.TabStop = false;
             // 
             // labelMinutes
             // 
@@ -315,7 +317,7 @@
             this.btnConvert.Location = new System.Drawing.Point(411, 105);
             this.btnConvert.Name = "btnConvert";
             this.btnConvert.Size = new System.Drawing.Size(75, 36);
-            this.btnConvert.TabIndex = 12;
+            this.btnConvert.TabIndex = 3;
             this.btnConvert.Text = "Convert";
             this.btnConvert.UseVisualStyleBackColor = true;
             this.btnConvert.Click += new System.EventHandler(this.btnConvertDistance_Click);
@@ -327,6 +329,7 @@
             this.txtConversionResult.ReadOnly = true;
             this.txtConversionResult.Size = new System.Drawing.Size(144, 29);
             this.txtConversionResult.TabIndex = 10;
+            this.txtConversionResult.TabStop = false;
             this.txtConversionResult.Text = "0";
             // 
             // tabHistory
