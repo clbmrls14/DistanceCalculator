@@ -30,6 +30,7 @@
         {
             this.tabDistanceCalculator = new System.Windows.Forms.TabControl();
             this.tabCalculator = new System.Windows.Forms.TabPage();
+            this.btnCalculateAll = new System.Windows.Forms.Button();
             this.txtTime = new System.Windows.Forms.NumericUpDown();
             this.txtSpeed = new System.Windows.Forms.NumericUpDown();
             this.txtDistance = new System.Windows.Forms.NumericUpDown();
@@ -43,9 +44,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnTime = new System.Windows.Forms.Button();
-            this.btnRate = new System.Windows.Forms.Button();
-            this.btnDistance = new System.Windows.Forms.Button();
             this.txtTravelTimeString = new System.Windows.Forms.TextBox();
             this.txtTravelTime = new System.Windows.Forms.TextBox();
             this.txtTravelRate = new System.Windows.Forms.TextBox();
@@ -54,11 +52,23 @@
             this.btnConvert = new System.Windows.Forms.Button();
             this.txtConversionResult = new System.Windows.Forms.TextBox();
             this.tabHistory = new System.Windows.Forms.TabPage();
+            this.calculationHistory = new System.Windows.Forms.DataGridView();
+            this.colTimeStamp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDistance = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSpeed = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTravelTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTravelTimeString = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTravelRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTravelDistance = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colConversion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabDistanceCalculator.SuspendLayout();
             this.tabCalculator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSpeed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDistance)).BeginInit();
+            this.tabHistory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.calculationHistory)).BeginInit();
             this.SuspendLayout();
             // 
             // tabDistanceCalculator
@@ -70,10 +80,12 @@
             this.tabDistanceCalculator.SelectedIndex = 0;
             this.tabDistanceCalculator.Size = new System.Drawing.Size(1005, 606);
             this.tabDistanceCalculator.TabIndex = 0;
+            this.tabDistanceCalculator.SelectedIndexChanged += new System.EventHandler(this.tabDistanceCalculator_SelectedIndexChanged);
             // 
             // tabCalculator
             // 
             this.tabCalculator.BackColor = System.Drawing.Color.Gainsboro;
+            this.tabCalculator.Controls.Add(this.btnCalculateAll);
             this.tabCalculator.Controls.Add(this.txtTime);
             this.tabCalculator.Controls.Add(this.txtSpeed);
             this.tabCalculator.Controls.Add(this.txtDistance);
@@ -87,9 +99,6 @@
             this.tabCalculator.Controls.Add(this.label5);
             this.tabCalculator.Controls.Add(this.label4);
             this.tabCalculator.Controls.Add(this.label3);
-            this.tabCalculator.Controls.Add(this.btnTime);
-            this.tabCalculator.Controls.Add(this.btnRate);
-            this.tabCalculator.Controls.Add(this.btnDistance);
             this.tabCalculator.Controls.Add(this.txtTravelTimeString);
             this.tabCalculator.Controls.Add(this.txtTravelTime);
             this.tabCalculator.Controls.Add(this.txtTravelRate);
@@ -105,9 +114,26 @@
             this.tabCalculator.TabIndex = 0;
             this.tabCalculator.Text = "Calculator";
             // 
+            // btnCalculateAll
+            // 
+            this.btnCalculateAll.BackColor = System.Drawing.Color.Tomato;
+            this.btnCalculateAll.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCalculateAll.Location = new System.Drawing.Point(117, 457);
+            this.btnCalculateAll.Name = "btnCalculateAll";
+            this.btnCalculateAll.Size = new System.Drawing.Size(228, 62);
+            this.btnCalculateAll.TabIndex = 8;
+            this.btnCalculateAll.Text = "Calculate All";
+            this.btnCalculateAll.UseVisualStyleBackColor = false;
+            this.btnCalculateAll.Click += new System.EventHandler(this.btnCalculateAll_Click);
+            // 
             // txtTime
             // 
             this.txtTime.Location = new System.Drawing.Point(195, 212);
+            this.txtTime.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
             this.txtTime.Name = "txtTime";
             this.txtTime.Size = new System.Drawing.Size(93, 29);
             this.txtTime.TabIndex = 14;
@@ -115,6 +141,11 @@
             // txtSpeed
             // 
             this.txtSpeed.Location = new System.Drawing.Point(195, 162);
+            this.txtSpeed.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
             this.txtSpeed.Name = "txtSpeed";
             this.txtSpeed.Size = new System.Drawing.Size(93, 29);
             this.txtSpeed.TabIndex = 14;
@@ -122,6 +153,11 @@
             // txtDistance
             // 
             this.txtDistance.Location = new System.Drawing.Point(195, 111);
+            this.txtDistance.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
             this.txtDistance.Name = "txtDistance";
             this.txtDistance.Size = new System.Drawing.Size(93, 29);
             this.txtDistance.TabIndex = 14;
@@ -232,39 +268,6 @@
             this.label3.Size = new System.Drawing.Size(0, 21);
             this.label3.TabIndex = 0;
             // 
-            // btnTime
-            // 
-            this.btnTime.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnTime.Location = new System.Drawing.Point(196, 432);
-            this.btnTime.Name = "btnTime";
-            this.btnTime.Size = new System.Drawing.Size(165, 35);
-            this.btnTime.TabIndex = 8;
-            this.btnTime.Text = "Calculate Travel Time";
-            this.btnTime.UseVisualStyleBackColor = false;
-            this.btnTime.Click += new System.EventHandler(this.btnTravelTime_Click);
-            // 
-            // btnRate
-            // 
-            this.btnRate.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnRate.Location = new System.Drawing.Point(434, 432);
-            this.btnRate.Name = "btnRate";
-            this.btnRate.Size = new System.Drawing.Size(180, 35);
-            this.btnRate.TabIndex = 8;
-            this.btnRate.Text = "Calculate Rate of Travel";
-            this.btnRate.UseVisualStyleBackColor = false;
-            this.btnRate.Click += new System.EventHandler(this.btnTravelRate_Click);
-            // 
-            // btnDistance
-            // 
-            this.btnDistance.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnDistance.Location = new System.Drawing.Point(673, 432);
-            this.btnDistance.Name = "btnDistance";
-            this.btnDistance.Size = new System.Drawing.Size(207, 35);
-            this.btnDistance.TabIndex = 8;
-            this.btnDistance.Text = "Calculate Distance Traveled";
-            this.btnDistance.UseVisualStyleBackColor = false;
-            this.btnDistance.Click += new System.EventHandler(this.btnTravelDistance_Click);
-            // 
             // txtTravelTimeString
             // 
             this.txtTravelTimeString.Location = new System.Drawing.Point(196, 383);
@@ -286,7 +289,7 @@
             this.txtTravelRate.Location = new System.Drawing.Point(434, 338);
             this.txtTravelRate.Name = "txtTravelRate";
             this.txtTravelRate.ReadOnly = true;
-            this.txtTravelRate.Size = new System.Drawing.Size(165, 29);
+            this.txtTravelRate.Size = new System.Drawing.Size(181, 29);
             this.txtTravelRate.TabIndex = 9;
             // 
             // labelMinutes
@@ -303,7 +306,7 @@
             this.txtTravelDistance.Location = new System.Drawing.Point(673, 338);
             this.txtTravelDistance.Name = "txtTravelDistance";
             this.txtTravelDistance.ReadOnly = true;
-            this.txtTravelDistance.Size = new System.Drawing.Size(165, 29);
+            this.txtTravelDistance.Size = new System.Drawing.Size(207, 29);
             this.txtTravelDistance.TabIndex = 9;
             this.txtTravelDistance.Click += new System.EventHandler(this.btnTravelDistance_Click);
             // 
@@ -329,12 +332,97 @@
             // tabHistory
             // 
             this.tabHistory.BackColor = System.Drawing.Color.Gainsboro;
+            this.tabHistory.Controls.Add(this.calculationHistory);
             this.tabHistory.Location = new System.Drawing.Point(4, 30);
             this.tabHistory.Name = "tabHistory";
             this.tabHistory.Padding = new System.Windows.Forms.Padding(3);
             this.tabHistory.Size = new System.Drawing.Size(997, 572);
             this.tabHistory.TabIndex = 1;
             this.tabHistory.Text = "History";
+            // 
+            // calculationHistory
+            // 
+            this.calculationHistory.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.calculationHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.calculationHistory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colTimeStamp,
+            this.colDistance,
+            this.colSpeed,
+            this.colTime,
+            this.colTravelTime,
+            this.colTravelTimeString,
+            this.colTravelRate,
+            this.colTravelDistance,
+            this.colConversion});
+            this.calculationHistory.Location = new System.Drawing.Point(3, 3);
+            this.calculationHistory.Name = "calculationHistory";
+            this.calculationHistory.Size = new System.Drawing.Size(991, 566);
+            this.calculationHistory.TabIndex = 0;
+            this.calculationHistory.Text = "dataGridView1";
+            this.calculationHistory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.calculationHistory_CellContentClick);
+            // 
+            // colTimeStamp
+            // 
+            this.colTimeStamp.HeaderText = "TimeStamp";
+            this.colTimeStamp.Name = "colTimeStamp";
+            this.colTimeStamp.ReadOnly = true;
+            this.colTimeStamp.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // colDistance
+            // 
+            this.colDistance.HeaderText = "Distance";
+            this.colDistance.Name = "colDistance";
+            this.colDistance.ReadOnly = true;
+            this.colDistance.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // colSpeed
+            // 
+            this.colSpeed.HeaderText = "Speed";
+            this.colSpeed.Name = "colSpeed";
+            this.colSpeed.ReadOnly = true;
+            this.colSpeed.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // colTime
+            // 
+            this.colTime.HeaderText = "Time";
+            this.colTime.Name = "colTime";
+            this.colTime.ReadOnly = true;
+            this.colTime.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // colTravelTime
+            // 
+            this.colTravelTime.HeaderText = "Travel Time (Minutes)";
+            this.colTravelTime.Name = "colTravelTime";
+            this.colTravelTime.ReadOnly = true;
+            this.colTravelTime.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // colTravelTimeString
+            // 
+            this.colTravelTimeString.HeaderText = "Travel Time (Text)";
+            this.colTravelTimeString.Name = "colTravelTimeString";
+            this.colTravelTimeString.ReadOnly = true;
+            this.colTravelTimeString.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // colTravelRate
+            // 
+            this.colTravelRate.HeaderText = "Travel Rate";
+            this.colTravelRate.Name = "colTravelRate";
+            this.colTravelRate.ReadOnly = true;
+            this.colTravelRate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // colTravelDistance
+            // 
+            this.colTravelDistance.HeaderText = "Distance Traveled";
+            this.colTravelDistance.Name = "colTravelDistance";
+            this.colTravelDistance.ReadOnly = true;
+            this.colTravelDistance.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // colConversion
+            // 
+            this.colConversion.HeaderText = "Converted Distance";
+            this.colConversion.Name = "colConversion";
+            this.colConversion.ReadOnly = true;
+            this.colConversion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // CalcForm
             // 
@@ -353,6 +441,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSpeed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDistance)).EndInit();
+            this.tabHistory.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.calculationHistory)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -371,9 +461,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnTime;
-        private System.Windows.Forms.Button btnRate;
-        private System.Windows.Forms.Button btnDistance;
         private System.Windows.Forms.TextBox txtTravelTimeString;
         private System.Windows.Forms.TextBox txtTravelTime;
         private System.Windows.Forms.TextBox txtTravelRate;
@@ -385,6 +472,17 @@
         private System.Windows.Forms.NumericUpDown txtTime;
         private System.Windows.Forms.NumericUpDown txtSpeed;
         private System.Windows.Forms.NumericUpDown txtDistance;
+        private System.Windows.Forms.Button btnCalculateAll;
+        private System.Windows.Forms.DataGridView calculationHistory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTimeStamp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDistance;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSpeed;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTravelTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTravelTimeString;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTravelRate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTravelDistance;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colConversion;
     }
 }
 
