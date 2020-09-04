@@ -93,6 +93,10 @@ namespace Calculations
                 minutes = minutes,
                 distanceType = distanceType,
                 speedType = speedType,
+                travelTime = travelTime,
+                travelTimeString = travelTimeString,
+                travelRate = travelRate,
+                distanceTraveled = distanceTraveled,
             };
     }
 }

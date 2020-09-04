@@ -18,8 +18,8 @@ namespace CalculatorWPF
             Calculator.distance = 60;
             Calculator.speed = 60;
             Calculator.minutes = 60;
-            Calculator.distanceType = "MPH";
-            Calculator.speedType = "KPH";
+            Calculator.distanceType = "Miles";
+            Calculator.speedType = "MPH";
 
 
             CalculateCommand = new DelegateCommand(
@@ -47,6 +47,7 @@ namespace CalculatorWPF
                     {
                         Calculator.convertedDistance = Calculator.KilometersToMiles(Calculator.distance);
                     }
+                    RaisePropertyChanged(nameof(Calculator));
                 },
                 () =>
                 {

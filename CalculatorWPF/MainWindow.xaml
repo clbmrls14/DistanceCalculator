@@ -4,9 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CalculatorWPF"
-        DataContext="{Binding MainWindowViewModel}"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <local:MainWindowViewModel/>
+    </Window.DataContext>
     <StackPanel>
         <TextBlock Text="Distance Calculator" FontSize="18pt" FontWeight="Black" />
         <TabControl>
@@ -38,8 +40,10 @@
                              Margin="5"
                              MinWidth="100"/>
                     <ComboBox SelectedIndex="0"
+                              SelectedValuePath="Content"
+                              SelectedValue="{Binding Calculator.distanceType}"
                               Grid.Column="2" 
-                              Width="70"
+                              Width="90"
                               Margin="5">
                         <ComboBoxItem>Miles</ComboBoxItem>
                         <ComboBoxItem>Kilometers</ComboBoxItem>
@@ -47,7 +51,8 @@
                     <Button Command="{Binding ConvertCommand}"
                             Content="Convert"
                             Grid.Column="3"
-                            Margin="5"/>
+                            Margin="5"
+                            Width="70"/>
                     <TextBox Text="{Binding Calculator.convertedDistance}"
                              Grid.Column="4"
                              IsReadOnly="True"
@@ -63,6 +68,8 @@
                              Margin="5"
                              MinWidth="100" />
                     <ComboBox SelectedIndex="0"
+                              SelectedValuePath="Content"
+                              SelectedValue="{Binding Calculator.speedType}"
                               Grid.Column="2"
                               Grid.Row="1"
                               Width="70"
@@ -122,7 +129,7 @@
                                Grid.Row="7"
                                VerticalAlignment="Center" 
                                Margin="5"/>
-                    <TextBox Text="{Binding Calculator.travelDistance}"
+                    <TextBox Text="{Binding Calculator.distanceTraveled}"
                              Grid.Row="7"
                              Grid.Column="1"
                              Margin="5"
