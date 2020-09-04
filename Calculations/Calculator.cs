@@ -2,8 +2,28 @@
 
 namespace Calculations
 {
-    public class Calculator
+    public class Calculator : ICloneable
     {
+
+        public double distance { get; set; }
+        public int speed { get; set; }
+        public double minutes { get; set; }
+        public string distanceType { get; set; }
+        public double convertedDistance { get; set; }
+        public string speedType { get; set; }
+        public int travelTime { get; set; }
+        public string travelTimeString { get; set; }
+        public double distanceTraveled { get; set; }
+        public double travelRate { get; set; }
+
+        public void CalculateAll()
+        {
+            travelTime = SolveForTime(distance, speed);
+            travelTimeString = TimeToString(travelTime);
+            distanceTraveled = SolveForDistance(speed, minutes);
+            travelRate = SolveForSpeed(distance, minutes);
+        }
+
         public static int SolveForTime(double distance, int speed)
         {
             if (distance < 0 | speed <= 0)
@@ -63,5 +83,17 @@ namespace Calculations
             }
             return Math.Round((kilometers / 1.60934), 2);
         }
+
+        public object Clone()
+        {
+            return new Calculator
+            {
+                distance = distance,
+                speed = speed,
+                minutes = minutes,
+                distanceType = distanceType,
+                speedType = speedType,
+            };
     }
+}
 }
