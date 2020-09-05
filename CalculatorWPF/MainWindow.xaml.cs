@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,23 @@ namespace CalculatorWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        MainWindowViewModel viewModel;
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = viewModel = new MainWindowViewModel(new RealFileProvider());
+        }
+
+        private void btnBrowse_Click(object sender, RoutedEventArgs e)
+        {
+            var openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Excel Files (*.xlxs)|*.xlsx";
+            openFileDialog.Title = "Select your Excel Input File";
+            openFileDialog.Multiselect = false;
+            if (openFileDialog.ShowDialog() ?? false)
+            {
+                viewModel.ImportFilePath = openFileDialog.FileName;
+            }
         }
     }
 }

@@ -98,6 +98,6 @@ namespace Calculations
                 travelRate = travelRate,
                 distanceTraveled = distanceTraveled,
             };
+        }
     }
-}
 }
