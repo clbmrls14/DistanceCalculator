@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace CalculatorWPF
 {
@@ -36,7 +37,10 @@ namespace CalculatorWPF
                 },
                 () =>
                 {
-                    return (Calculator.distance > 0 && Calculator.speed > 0 && Calculator.minutes > 0);
+                    bool canExecute = (Calculator.distance > 0 && Calculator.speed > 0 && Calculator.minutes > 0);
+                    if (!canExecute)
+                        MessageBox.Show("Values must be greater than zero.");
+                    return canExecute;
                 });
 
             ConvertCommand = new DelegateCommand(

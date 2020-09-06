@@ -74,7 +74,7 @@
                                VerticalAlignment="Center"
                                Margin="5"
                                Grid.Row="2"/>
-                    <TextBox Text="{Binding Calculator.distance}"
+                    <TextBox Text="{Binding Calculator.distance, ValidatesOnDataErrors=True}"
                              Grid.Column="1" 
                              Margin="5"
                              MinWidth="100"
@@ -112,7 +112,7 @@
                              MinWidth="100" />
                     <ComboBox SelectedIndex="0"
                               SelectedValuePath="Content"
-                              SelectedValue="{Binding Calculator.speedType}"
+                              SelectedValue="{Binding Calculator.speedType, ValidatesOnDataErrors=True}"
                               Grid.Column="2"
                               Grid.Row="3"
                               Width="70"
@@ -125,7 +125,7 @@
                                Grid.Row="4" 
                                VerticalAlignment="Center" 
                                Margin="5"/>
-                    <TextBox Text="{Binding Calculator.minutes}"
+                    <TextBox Text="{Binding Calculator.minutes, ValidatesOnDataErrors=True}"
                              Grid.Row="4" 
                              Grid.Column="1" 
                              Margin="5"

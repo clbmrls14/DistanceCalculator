@@ -99,5 +99,28 @@ namespace Calculations
                 distanceTraveled = distanceTraveled,
             };
         }
+
+        public string this[string columnName]
+        {
+            get
+            {
+                switch(columnName)
+                {
+                    case nameof(distance):
+                        if (distance < 0)
+                            return "Distance must be greater than 0";
+                        break;
+                    case nameof(speed):
+                        if (speed < 0)
+                            return "Speed must be greater than 0";
+                        break;
+                    case nameof(minutes):
+                        if (minutes < 0)
+                            return "Minutes must be greater than 0;";
+                        break;
+                }
+                return string.Empty;
+            }
+        }
     }
 }
